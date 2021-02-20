@@ -32,7 +32,7 @@
 .bottom-container{
   padding: 5% 5%;
   margin: 0px auto;
-  background-color: #F68283;
+  background-color: #FFCCCC;
 }
 
 .div1{
@@ -65,6 +65,8 @@
 
 .patient-details-button{
   font-family: "Montserrate", sans-serif;
+  background-color: #E90B73;
+  border: 0px;
 }
 
 .bottom-subheading{
@@ -92,6 +94,8 @@
 }
 
 .book-button-profile{
+  background-color: #E90B73;
+  border: 0px;
   margin-right: 105px;
 }
 

@@ -1,11 +1,11 @@
 <%- include('partials/header.ejs') %>
 
-<div class="container" style="border: 1px solid rgb(128, 128, 128); border-radius: 15px;  background-color: #ffffff;">
+<div class="container" style="border: 1.5px solid #E80B73; border-radius: 15px;  background-color: #ffcccc; margin:120px auto ;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);">
 
   <div class="header">
     <div class="logo" style="display: flex; align-items: center;">
       <img src="<%=imageSource%>" alt="" style="">
-      <h3 style="margin-left: 20px; font-size: 200%;"> <span style="color:indianred; font-weight: bold;"> Wel</span>come <%=userName%>
+      <h3 style="margin-left: 20px; font-size: 200%;"> Welcome<span style="color:#E80B73;"> <%=userName%></span>
       </h3>
     </div>
   </div>
@@ -18,7 +18,7 @@
   <form action="/patient/dashboard/one-time-inputs" method="POST" style="padding: 15px; font-size:120%;">
     <table style="margin: 0; width: 1000px;">
       <tr>
-        <td style="padding: 10px;"> <span style="font-weight:500;"> Name </span> : <%=userName%>
+        <td style="padding: 10px 10px 10px 180px;"> <span style="font-weight:500;"> Name </span> : <%=userName%>
           <%if(!userName){%><input type="text" name="name" placeholder="Name" style="width:150px;margin-left:10px" required>
           <%}%>
           </td>
@@ -29,8 +29,8 @@
           </td>
         </tr>
         <tr>
-          <td style="padding: 10px;"> <span style="font-weight:500;"> Age </span>: <%=age%>
-          <%if(!age){%><input type="number" name="age" style="width:150px;margin-left:25px" required>
+          <td style="padding: 10px 10px 10px 180px;"> <span style="font-weight:500;"> Age </span>: <%=age%>
+          <%if(!age){%><input type="number" name="age" style="width:150px;margin-left:25px;" required>
           <%}%>
           </td>
           <td style="padding: 10px;"> <span style="font-weight:500;"> Height</span> : <%=height%>
@@ -39,8 +39,8 @@
           </td>
         </tr>
         <tr>
-          <td style="padding: 10px;">  <span style="font-weight:500;"> Gender </span>: <%=gender%>
-          <%if(!gender){%><input type="text" name="gender" style="width:150px" required>
+          <td style="padding: 10px 10px 10px 180px;">  <span style="font-weight:500;"> Gender </span>: <%=gender%>
+          <%if(!gender){%><input type="text" name="gender" style="width:150px; height:34px;" required>
           <%}%>
           </td>
           <td style="padding: 10px;"> <span style="font-weight:500;"> Contact no. </span>: <%=contactNo%>
@@ -50,30 +50,27 @@
 
         </tr>
         <tr>
-          <td style="padding: 10px;"> <span style="font-weight:500;"> E-mail </span>: <%=email%>
+          <td style="padding: 10px 10px 10px 180px;"> <span style="font-weight:500;"> E-mail </span>: <%=email%>
           <%if(!email){%><input type="email" name="mail" style="width:150px;margin-left:8px;" required>
           <%}%>
           </td>
           <td style="padding: 10px;"> <span style="font-weight:500;"> Blood group </span>: <%=bloodGroup%>
-          <%if(!bloodGroup){%><input type="text" name="blood" style="width:150px;" required>
+          <%if(!bloodGroup){%><input type="text" name="blood" style="width:150px; height:34px;" required>
           <%}%>
           </td>
         </tr>
         <tr>
             <div class="mb-3">
-          <td style="padding: 10px;"> <span style="font-weight:500;"> Address</span> : <%=address%>
-          <%if(!address){%><input type="text" placeholder=" City" name="add" style="width:150px;margin-left:8px;">
+          <td style="padding: 10px 10px 10px 180px;"> <span style="font-weight:500;"> Address</span> : <%=address%>
+          <%if(!address){%><input type="text" placeholder=" City" name="add" style="width:150px;margin-left:8px; height:34px;">
           <%}%>
           </td>
   </div>
   </tr>
-  <tr>
-    <td>
-      <%if(!address){%><input type="submit" name="add" placeholder="Done">
-          <%}%>
-    </td>
-  </tr>
   </table>
+      <%if(!address){%><input style="margin:20px 500px; background-color:#E80B73; color:#fff;" class="btn btn-lg" type="submit" name="add" placeholder="Done">
+          <%}%>
+
   </form>
 
   </div>
@@ -81,28 +78,30 @@
 
 
   <!-- COSTOM FORM -->
-
-  <div class="container" style="border: 1px solid rgb(128, 128, 128); border-radius: 15px; margin-top: 30px;">
+<hr style="width:10%; border-top: 2px solid #757575; margin:10px auto; margin:bottom:0px;">
+<br><br>
+  <div class="container" style="border: 1.5px solid #E80B73; padding:2%;border-radius: 15px; margin-top: 30px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);">
     <div class="row">
 
-      <div class="form col-lg">
+      <div class="form col-lg" style="background-color:#ffcccc;">
         <div>
-          <h3>Problems You Face</h3>
+          <h3 style="font-family: Montserrat, sans-serif;">Problems You Face</h3>
         </div>
         <form action="/patient/dashboard/patientProblem" method="post">
           <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label"> Add problems that you face commonly, to share with
-              the doctors</label>
+            <label for="exampleFormControlInput1" class="form-label"> <span style="font-family: Montserrat, sans-serif;">Add problems that you face commonly, to share with the doctors</span>
+              </label>
             <input type="text" name="patientProblemHeading" class="form-control" id="exampleFormControlInput1"
               placeholder="Heading">
             <input type="text" name="patientProblemContent" class="form-control" id="exampleFormControlInput12"
               placeholder="Description">
-            <button type="submit" style="margin-left: 46%;" name="button" class="btn btn-dark btn-lg ">Add</button>
+            <button type="submit" style="margin:20px 42%;background-color:#E80B73; border:none;" name="button" class="btn btn-dark btn-lg ">Add</button>
           </div>
         </form>
       </div>
+
       <td class="col-lg">
-        <div class="box" style="width: 400px; height: 400px; overflow: scroll; margin: 10px 10px ;">
+        <div class="box" style="width: 400px; height: 400px; overflow-y:scroll; margin: 30px 20px ;background-color:#ffcccc">
           <%problemItems.forEach((item, i)=> {%>
           <form class="" action="/patient/dashboard/patientProblem/delete" method="post">
             <div class="item">
@@ -110,7 +109,7 @@
               <h6>
                 <%= item.problemHeading %>
               </h6>
-              <p style="color: #535353;">
+              <p style="color: #757575; font-weight:bold; font-family:Montserrat, sans-serif;">
                 <%= item.problem %>
               </p>
             </div>
@@ -123,39 +122,39 @@
 
 
 
+<!-- Form 3 -->
+<br><br><br>
+<hr style="width:10%; border-top: 2px solid #757575; margin:10px auto; margin:bottom:0px;">
 
-
-
-
-  <div class="container" style="border: 1px solid rgb(128, 128, 128); border-radius: 15px; margin:30px auto;">
+  <div class="container" style="border: 1.5px solid #E80B73; padding:2%; border-radius: 15px; margin:100px auto;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);">
     <div class="row">
-      <div class="form col-lg">
+      <div class="form col-lg" style="background-color:#ffcccc;">
         <div>
-          <h3>Medicines</h3>
+          <h3 style="font-family: Montserrat, sans-serif;">Medicines</h3>
         </div>
         <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Add medicine that you are taking so that doctors can
-            suggest better</label>
+          <label for="exampleFormControlInput1" class="form-label"><span style="font-family: Montserrat, sans-serif;">Add medicine that you are taking so that doctors can suggest better</span>
+            </label>
 
           <form action="/patient/dashboard/patientMedicines" method="post">
             <input type="text" name="patientMedicines" class="form-control" id="exampleFormControlInput1" placeholder="Medicine Names">
-            <div class="list-group-item" style="margin-bottom: 5px; padding: 10px 42%;">
+            <div class="list-group-item" style="margin-bottom: 5px; padding: 10px 35%;">
 
               <!-- <textarea class="list-group-item" name="patientMedicines" placeholder="Medicine Name" rows="1"
               cols="20"></textarea> -->
-              <label class="" for="start">Start date:</label>
+              <label class="" for="start"><span style="font-family:Montserrat, sans-serif;">Start date:</span></label>
               <input style="background-color: rgb(243, 243, 243); color: rgba(114, 114, 114, 0.932);" class="list-group-item" type="date" id="start" name="startDate" value="2021-01-01" min="2010-01-01" max="2022-12-31">
-              <label class="" for="start">End date:</label>
+              <label class="" for="start"><span style="font-family:Montserrat, sans-serif;">End date:</span></label>
 
               <input style="background-color: rgb(243, 243, 243); color: rgba(114, 114, 114, 0.932);" class="list-group-item" type="date" id="end" name="stopDate" value="2021-01-01" min="2010-01-01" max="2022-12-31">
 
             </div>
-            <button type="submit" style="margin-left: 42%;" class="btn btn-dark btn-lg">Add</button>
+            <button type="submit" style="margin:20px 42%;background-color:#E80B73; border:none;" class="btn btn-dark btn-lg">Add</button>
           </form>
         </div>
       </div>
       <td>
-        <div class="box" style="width: 400px; height: 400px; overflow: scroll; margin: 10px 10px ;">
+        <div class="box" style="width: 400px; height: 400px; overflow-y: scroll; margin: 30px 20px; background-color:#ffcccc;">
           <%medicineItems.forEach((item, i)=> {%>
           <form class="" action="/patient/dashboard/patientMedicine/delete" method="post">
             <div class="item">
@@ -163,10 +162,10 @@
               <h6>
                 <%= item.medName %>
               </h6>
-              <p style="color: #535353;">
+              <p style="color: #757575; font-weight:bold; font-family:Montserrat, sans-serif;">
                 <%= item.dateStart %>
               </p>
-              <p style="color: #535353;">
+              <p style="color: #757575; font-weight:bold; font-family:Montserrat, sans-serif;">
                 <%= item.dateEnd %>
               </p>
             </div>
