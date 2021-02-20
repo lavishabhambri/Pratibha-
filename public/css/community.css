@@ -1,0 +1,73 @@
+.Community-heading{
+  text-align: center;
+  margin-top: 40px;
+}
+
+.blog-box{
+  background-color: #F68283;
+  width: 320px;
+  margin: 40px auto;
+  height: 320px;
+  /* text-align: center; */
+  font-family: "Montserrate", sans-serif;
+  box-shadow:0px 7px 7px 0px rgba(0, 0, 0, 0.3);
+}
+
+.blog-box:hover{
+  box-shadow:0px 7px 8px 0px rgba(0, 0, 0, 0.50);
+  transform: scale(1.03);
+}
+
+.Community-Sub-heading{
+  margin: 40px;
+  text-align: center;
+  font-family: "Montserrate", sans-serif;
+}
+
+.container .blog-cont{
+  margin: 20px;
+  display: inline;
+}
+
+.box-heading{
+  margin: 20px auto;
+  color: #fff;
+
+  font-family: "Montserrate", sans-serif;
+}
+
+.community-btn{
+  margin-top: 20px;
+  display: inline;
+}
+
+.community-blog-box{
+  background-color: #fff;
+  height: 170px;
+}
+
+.form-community{
+  text-align: center;
+}
+
+.create-btn{
+  text-align: center;
+  margin: 40px auto;
+}
+
+.community-textarea{
+  border-color: #F68283;
+}
+
+.writtenby-heading{
+  padding: 5px;
+  display: inline;
+}
+
+.message-writer{
+  text-align: center;
+}
+
+.create-message-btn{
+  margin: 40px auto;
+}
