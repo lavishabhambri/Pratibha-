@@ -1,0 +1,180 @@
+<%- include('partials/header.ejs') %>
+
+<div class="container" style="border: 1px solid rgb(128, 128, 128); border-radius: 15px;  background-color: #ffffff;">
+
+  <div class="header">
+    <div class="logo" style="display: flex; align-items: center;">
+      <img src="<%=imageSource%>" alt="" style="">
+      <h3 style="margin-left: 20px; font-size: 200%;"> <span style="color:indianred; font-weight: bold;"> Wel</span>come <%=userName%>
+      </h3>
+    </div>
+  </div>
+
+  <hr style="2px solid #757575">
+
+  <!-- FORM-1 -->
+
+
+  <form action="/patient/dashboard/one-time-inputs" method="POST" style="padding: 15px; font-size:120%;">
+    <table style="margin: 0; width: 1000px;">
+      <tr>
+        <td style="padding: 10px;"> <span style="font-weight:500;"> Name </span> : <%=userName%>
+          <%if(!userName){%><input type="text" name="name" placeholder="Name" style="width:150px;margin-left:10px" required>
+          <%}%>
+          </td>
+
+          <td style="padding: 10px; "> <span style="font-weight:500;"> Weight </span> : <%=weight%>
+          <%if(!weight){%><input type="number" name="weight" placeholder="in Kg" style="width:150px;margin-left:33px" required>
+          <%}%>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 10px;"> <span style="font-weight:500;"> Age </span>: <%=age%>
+          <%if(!age){%><input type="number" name="age" style="width:150px;margin-left:25px" required>
+          <%}%>
+          </td>
+          <td style="padding: 10px;"> <span style="font-weight:500;"> Height</span> : <%=height%>
+          <%if(!height){%><input type="number" name="height" placeholder="in cm" style="width:150px;margin-left:33px" required>
+          <%}%>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 10px;">  <span style="font-weight:500;"> Gender </span>: <%=gender%>
+          <%if(!gender){%><input type="text" name="gender" style="width:150px" required>
+          <%}%>
+          </td>
+          <td style="padding: 10px;"> <span style="font-weight:500;"> Contact no. </span>: <%=contactNo%>
+          <%if(!contactNo){%><input type="tel" name="number" style="width:150px;" required>
+          <%}%>
+          </td>
+
+        </tr>
+        <tr>
+          <td style="padding: 10px;"> <span style="font-weight:500;"> E-mail </span>: <%=email%>
+          <%if(!email){%><input type="email" name="mail" style="width:150px;margin-left:8px;" required>
+          <%}%>
+          </td>
+          <td style="padding: 10px;"> <span style="font-weight:500;"> Blood group </span>: <%=bloodGroup%>
+          <%if(!bloodGroup){%><input type="text" name="blood" style="width:150px;" required>
+          <%}%>
+          </td>
+        </tr>
+        <tr>
+            <div class="mb-3">
+          <td style="padding: 10px;"> <span style="font-weight:500;"> Address</span> : <%=address%>
+          <%if(!address){%><input type="text" placeholder=" City" name="add" style="width:150px;margin-left:8px;">
+          <%}%>
+          </td>
+  </div>
+  </tr>
+  <tr>
+    <td>
+      <%if(!address){%><input type="submit" name="add" placeholder="Done">
+          <%}%>
+    </td>
+  </tr>
+  </table>
+  </form>
+
+  </div>
+
+
+
+  <!-- COSTOM FORM -->
+
+  <div class="container" style="border: 1px solid rgb(128, 128, 128); border-radius: 15px; margin-top: 30px;">
+    <div class="row">
+
+      <div class="form col-lg">
+        <div>
+          <h3>Problems You Face</h3>
+        </div>
+        <form action="/patient/dashboard/patientProblem" method="post">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"> Add problems that you face commonly, to share with
+              the doctors</label>
+            <input type="text" name="patientProblemHeading" class="form-control" id="exampleFormControlInput1"
+              placeholder="Heading">
+            <input type="text" name="patientProblemContent" class="form-control" id="exampleFormControlInput12"
+              placeholder="Description">
+            <button type="submit" style="margin-left: 46%;" name="button" class="btn btn-dark btn-lg ">Add</button>
+          </div>
+        </form>
+      </div>
+      <td class="col-lg">
+        <div class="box" style="width: 400px; height: 400px; overflow: scroll; margin: 10px 10px ;">
+          <%problemItems.forEach((item, i)=> {%>
+          <form class="" action="/patient/dashboard/patientProblem/delete" method="post">
+            <div class="item">
+              <input name="Checkbox" value="<%= item._id%>" type="checkbox" input onChange="this.form.submit()">
+              <h6>
+                <%= item.problemHeading %>
+              </h6>
+              <p style="color: #535353;">
+                <%= item.problem %>
+              </p>
+            </div>
+          </form>
+          <%});%>
+</div>
+</td>
+</div>
+</div>
+
+
+
+
+
+
+
+  <div class="container" style="border: 1px solid rgb(128, 128, 128); border-radius: 15px; margin:30px auto;">
+    <div class="row">
+      <div class="form col-lg">
+        <div>
+          <h3>Medicines</h3>
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Add medicine that you are taking so that doctors can
+            suggest better</label>
+
+          <form action="/patient/dashboard/patientMedicines" method="post">
+            <input type="text" name="patientMedicines" class="form-control" id="exampleFormControlInput1" placeholder="Medicine Names">
+            <div class="list-group-item" style="margin-bottom: 5px; padding: 10px 42%;">
+
+              <!-- <textarea class="list-group-item" name="patientMedicines" placeholder="Medicine Name" rows="1"
+              cols="20"></textarea> -->
+              <label class="" for="start">Start date:</label>
+              <input style="background-color: rgb(243, 243, 243); color: rgba(114, 114, 114, 0.932);" class="list-group-item" type="date" id="start" name="startDate" value="2021-01-01" min="2010-01-01" max="2022-12-31">
+              <label class="" for="start">End date:</label>
+
+              <input style="background-color: rgb(243, 243, 243); color: rgba(114, 114, 114, 0.932);" class="list-group-item" type="date" id="end" name="stopDate" value="2021-01-01" min="2010-01-01" max="2022-12-31">
+
+            </div>
+            <button type="submit" style="margin-left: 42%;" class="btn btn-dark btn-lg">Add</button>
+          </form>
+        </div>
+      </div>
+      <td>
+        <div class="box" style="width: 400px; height: 400px; overflow: scroll; margin: 10px 10px ;">
+          <%medicineItems.forEach((item, i)=> {%>
+          <form class="" action="/patient/dashboard/patientMedicine/delete" method="post">
+            <div class="item">
+              <input name="Checkbox" value="<%= item._id%>" type="checkbox" input onChange="this.form.submit()">
+              <h6>
+                <%= item.medName %>
+              </h6>
+              <p style="color: #535353;">
+                <%= item.dateStart %>
+              </p>
+              <p style="color: #535353;">
+                <%= item.dateEnd %>
+              </p>
+            </div>
+          </form>
+          <%});%>
+        </div>
+      </td>
+    </div>
+  </div>
+
+  <%- include("partials/footer.ejs") -%>

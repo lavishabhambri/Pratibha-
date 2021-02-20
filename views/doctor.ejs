@@ -1,0 +1,133 @@
+
+<%- include('partials/header.ejs') %>
+
+<h1 class="doctor-dashboard-heading">Welcome Dr. <span style="color:#F68283;"><%=userName%></span></h1>
+
+<div class="container">
+<form style=" padding: 0% 15%"action="/doctor/dashboard/one-time-inputs" method="POST">
+  <table class="table" style="margin: 20px auto; text-align:left; font-family: "Montserrate", sans-serif;>
+    <tbody>
+    <tr>
+      <td class="table-firstData">Name : &nbsp&nbsp<%=userName%> <%if(!userName){%><input type="text" name="name" class="doctor-input;"style="width:150px;height: auto; text-align:left;" required><%}%></td>
+      <td class="table-data">Doctor's ID : &nbsp<%=doctorID%> <%if(!doctorID){%><input type="text" name="DocID" class="doctor-input;" style="width:150px;height: auto;text-align:left;" required><%}%></td>
+    </tr>
+    <tr>
+      <td class="table-firstData">Gender : <%=gender%> <%if(!gender){%><input type="text" name="gender" class="doctor-input;" style="width:150px ;height: auto;text-align:left;" required><%}%></td>
+      <td class="table-data">Qualification : <%=qualification%> <%if(!qualification){%><input type="text" name="qualification"  class="doctor-input;" style="width:150px; height: auto;text-align:left;" required><%}%></td>
+    </tr>
+    <tr>
+      <td class="table-firstData">Age : &nbsp&nbsp&nbsp&nbsp&nbsp<%=age%> <%if(!age){%><input type="number" name="age" class="doctor-input;" style="width:150px;text-align:left;" required><%}%></td>
+      <td class="table-data">Location : &nbsp&nbsp&nbsp&nbsp&nbsp<%=address%> <%if(!address){%><input type="text" name="location" class="doctor-input;" style="width:150px;height: auto;text-align:left;"><%}%></td>
+
+    </tr>
+    <tr>
+      <td class="table-firstData">Email : &nbsp&nbsp<%=email%> <%if(!email){%><input type="email" name="mail" class="doctor-input;" style="width:150px;text-align:left;" required><%}%></td>
+      <td class="table-data">Hospital : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%=hospitalName%> <%if(!hospitalName){%><input type="text" name="hospital" class="doctor-input;" style="width:150px; height: auto;text-align:left;" required><%}%></td>
+    </tr>
+    <tr>
+      <td class="table-firstData">Phone : &nbsp<%=contactNo%> <%if(!contactNo){%><input type="tel" name="number" class="doctor-input;" style="width:150px;text-align:left;" required><%}%></td>
+      <td></td>
+    </tr>
+    </tbody>
+</table>
+<div class="" style="text-align:center">
+  <%if(!contactNo){%><input class="btn btn-lg btn-dark submit-btn" type="submit" name="add" placeholder="Done"><%}%>
+</div>
+</form>
+
+</div>
+
+<hr style="width:10%; border-top: 2px solid #757575; margin:40px auto 40px;">
+
+<!-- Bottom Section -->
+<div class="container-fluid bottom-container" style="padding: 5% 7%;">
+  <h1 style="text-align:center; margin:0px auto 50px; color:#fff;">Appointment <span style="color:#000;">and</span> Patients</h1>
+  <div class="row">
+    <div class="col col-lg-8 col-sm-12 div1 overflow-auto">
+      <h2 class="bottom-subheading">Your Patients</h2>
+
+      <div class="card patient-card">
+        <div class="card-body">
+          <h5 class="card-header">Patient Name : </h5>
+          <p class="card-text patient-details">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-dark patient-details-button">Patient Details</a>
+        </div>
+
+      </div>
+
+      <div class="card patient-card">
+        <div class="card-body ">
+          <h5 class="card-header">Patient Name : </h5>
+          <p class="card-text patient-details">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-dark patient-details-button">Patient Details</a>
+        </div>
+      </div>
+
+
+    <div class="card patient-card">
+      <div class="card-body ">
+        <h5 class="card-header">Patient Name : </h5>
+        <p class="card-text patient-details">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-dark patient-details-button">Patient Details</a>
+      </div>
+    </div>
+  </div>
+
+    <div class="col col-lg-4 col-sm-12 div2 overflow-auto">
+      <h2 class="bottom-subheading">Book Appointments</h2>
+      <div class="card booking-card">
+        <div class="card-body">
+          <h5 class="card-header patient-book-name">Patient Name : </h5>
+          <div class="card-inner-content">
+            <label class="meeting-text" for="meeting">Choose date:</label>
+            <input type="date" id="meeting" name="birthday">
+            <label  class="meeting-text" for="meeting">Select a time:</label>
+            <input type="time" id="meeting" name="appt">
+          </div>
+          <div class="cancel-confirm-btns">
+            <a href="#" class="btn btn-dark btn-sm book-button-profile">Profile</a>
+            <a href="#" class="btn btn-success btn-sm book-button"><i class="fas fa-check"></i></a>
+            <a href="#" class="btn btn-danger btn-sm book-button"><i class="fas fa-times"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card booking-card">
+        <div class="card-body">
+          <h5 class="card-header patient-book-name">Patient Name : </h5>
+          <div class="card-inner-content">
+            <label class="meeting-text" for="meeting">Choose date:</label>
+            <input type="date" id="meeting" name="birthday">
+            <label  class="meeting-text" for="meeting">Select a time:</label>
+            <input type="time" id="meeting" name="appt">
+          </div>
+          <div class="cancel-confirm-btns">
+            <a href="#" class="btn btn-dark btn-sm book-button-profile">Profile</a>
+            <a href="#" class="btn btn-success btn-sm book-button"><i class="fas fa-check"></i></a>
+            <a href="#" class="btn btn-danger btn-sm book-button"><i class="fas fa-times"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card booking-card">
+        <div class="card-body">
+          <h5 class="card-header patient-book-name">Patient Name : </h5>
+          <div class="card-inner-content">
+            <label class="meeting-text" for="meeting">Choose date:</label>
+            <input type="date" id="meeting" name="birthday">
+            <label  class="meeting-text" for="meeting">Select a time:</label>
+            <input type="time" id="meeting" name="appt">
+          </div>
+          <div class="cancel-confirm-btns">
+            <a href="#" class="btn btn-dark btn-sm book-button-profile">Profile</a>
+            <a href="#" class="btn btn-success btn-sm book-button"><i class="fas fa-check"></i></a>
+            <a href="#" class="btn btn-danger btn-sm book-button"><i class="fas fa-times"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<%- include('partials/footer.ejs') %>
