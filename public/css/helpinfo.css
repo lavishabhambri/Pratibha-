@@ -1,0 +1,51 @@
+.food{
+  text-align: center;
+}
+
+.food-text{
+  margin-top: 40px;
+  text-align: center;
+}
+
+.food .container{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 40px auto;
+}
+
+.food .container .card{
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.yoga-images{
+  width: 400px;
+  height: 370px;
+}
+
+.food .container .card:hover{
+  background-color: rgba(246, 130, 131, 1);
+
+}
+
+.food .container .card p{
+  color: #757575;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.food .container .card p:hover{
+  color: #fff;
+}

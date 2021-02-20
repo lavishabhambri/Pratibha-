@@ -1,0 +1,45 @@
+.doc-heading{
+  text-align: center;
+  margin: 40px auto;
+}
+
+.doc-details{
+  color: #000;
+  font-family: "Montserrate", sans-serif;
+  font-size: 20px;
+}
+
+.doc-details-input{
+  color: #fff;
+  display: inline;
+  font-family: "Montserrate", sans-serif;
+  font-size: 20px;
+}
+
+
+.table td {border: none}
+
+.details-card{
+  margin: 0px auto 60px;
+  padding-right: 5%;
+  width: 60%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.problems{
+  color: #fff;
+  text-align: center;
+  font-family: "Montserrate", sans-serif;
+  font-size: 18px;
+}
+
+.medicines-names{
+  margin: 3% 4%;
+  font-family: "Montserrate", sans-serif;
+  font-size: 20px;
+  color: #fff;
+}
+
+.dc{
+  margin-bottom: 100px;
+}
