@@ -1,0 +1,485 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+li, a{
+    font-family: "Montserrate", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #282929;
+    text-decoration: none;
+}
+
+button {
+  background: #00dbde;
+    font-family: "Montserrate", sans-serif;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #000;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    padding: 30px 10%;
+    background-color: #eeeeee;
+
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo__img {
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+}
+ .logo__name {
+    font-family: "Montserrate", sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    color: #282929;
+    text-decoration: none;
+    padding: 0px 0px 0px 6px;
+ }
+
+.nav__links {
+    display: flex;
+    list-style: none;
+}
+.nav__links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav__links li a{
+    transition: all 0.3s ease 0s;
+}
+
+.nav__links li a:hover{
+    color: #b9b9b9;
+}
+
+button{
+    padding: 9px 25px;
+    /* background-color: rgba(246, 130, 131, 1); */
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+
+.hero {
+    margin-top: 30px;
+}
+
+.heroContainer {
+    display: flex;
+    flex-direction: row;
+    padding: 0px 10%;
+}
+
+.mainImage {
+    max-width: 50%;
+    height: auto;
+    justify-content: center;
+}
+
+.mainHeadingAbout{
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: #000;
+  margin: 100px auto 50px;
+}
+
+.mainImage2 {
+    max-width: 30%;
+    /* height: auto; */
+    position: relative;
+    margin-top: 100px;
+    justify-content: center;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.mainSubLine {
+    padding: 10px 10px;
+    text-align: center;
+    font-family: "Montserrate", sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #757575;
+    text-decoration: none;
+}
+
+.mainHeading {
+    padding: 10px 0px;
+    text-align: left;
+    font-family: "Montserrate", sans-serif;
+    font-weight: 500;
+    font-size: 35px;
+    font-weight: bold;
+    color: #F68283;
+    text-decoration: none;
+}
+.mainSubHeading{
+  font-family: "Montserrate", sans-serif;
+  font-weight: 500;
+  text-align: left;
+  font-size: 35px;
+  font-weight: bold;
+  color:#000;
+  text-decoration: none;
+}
+
+.heroHeadings{
+  margin-top: 60px;
+  text-align:left;
+}
+.checkoutButton {
+    padding: 40px 0;
+    text-align: center;
+    z-index:1;
+}
+
+
+.loginButton {
+    margin-left: 20px;
+}
+
+.textaboutContainer {
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 0 20% 30px 20%;
+}
+.aboutContainer {
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color:#fff;
+    align-items: center;
+}
+.aboutText1 {
+    font-family: "Montserrat", sans-serif;
+    padding: 20px 0;
+    color: #000;
+    line-height: 1.5;
+}
+.aboutText {
+    font-family: "Montserrat", sans-serif;
+    padding: 30px 0 0 0;
+    color:#fff;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+.highlight {
+    font-weight: 500;
+    font-size: 22px;
+}
+
+.twogirlimage {
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 25%;
+    padding: 5%;
+}
+
+.aboutEmotions1{
+  color: #757575;
+  font-family: "Montserrat", sans-serif;
+  text-align: right;
+}
+
+.aboutEmotions2{
+  color: #757575;
+  font-family: "Montserrat", sans-serif;
+  text-align: left;
+}
+
+/* Features Section */
+.features{
+  margin: -0.5px
+   auto 50px auto;
+  background-color: hsla(300, 100%, 50%, 0.22);
+}
+
+.single_project{
+  border-radius: 5%;
+  background-color: white;
+  text-align: center;
+  align-items: center;
+  transition: all 0.2s ease-in;
+}
+.single_project:hover{
+  box-shadow:0px 7px 7px 0px rgba(0, 0, 0, 0.50);
+  transform: scale(1.03);
+}
+
+.project_icon{
+  padding: 0 30px;
+}
+.features-text{
+    padding: 30px 0 30px;
+    text-align: center;
+}
+
+.features-icon{
+  padding-top: 20px;
+  margin-bottom: 30px;
+}
+
+.features-icon:hover{
+  color: #F68283;
+}
+
+.features-subheading{
+  text-align: center;
+}
+
+.features-subtext{
+  font-size: 12px;
+  line-height: 1.7;
+  color: #757575;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    margin: 0 0 15px;
+}
+.features-button{
+    margin: 65px auto auto 30px;
+    display: inline-block;
+    background: #1de9b6 none repeat scroll 0 0;
+    font-weight: 700;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.15);
+}
+
+/* Doctors Images Section */
+.doctors{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Footer Image */
+.footer-image{
+  width: 100%;
+  height: 350px;
+}
+
+
+/* Doctor section */
+.doctors-heading{
+  font-weight: bold;
+  margin: auto;
+  text-align: center;
+}
+
+.doctor-container{
+  position: relative;
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.doctor-card{
+  position: relative;
+  height: 250px;
+  background: #fff;
+  display: flex;
+  width: 45%;
+  margin: 30px 0;
+}
+
+.doctor-image{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #333;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+}
+.doctor-subtext{
+  font-family: "Montserrate", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #757575;
+  text-decoration: none;
+}
+.doctor-container .doctor-card:hover .doctor-image{
+  width: 150px;
+  height: 100px;
+  left:-75px;
+  top: 75px;
+  transition: 0.5s ease-in-out;
+}
+
+.doctor-container .doctor-card .doctor-image:before{
+  content: attr(data-text);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+   width: 100%;
+   height: 100%;
+   text-align: center;
+   font-size: 6em;
+   color: rgba(225, 225, 225, 0.05);
+   font-weight: 700;
+}
+
+
+.doctor-container .doctor-card:hover .doctor-image img{
+  max-width: 75px;
+  transition: 0.5s ease-in-out;
+}
+
+.doctor-container .doctor-card .doctor-content{
+  position: absolute;
+  right: 0;
+  width: calc(100% - 75px);
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.doctor-container .doctor-card h3{
+  margin-bottom: 5px;
+  font-size: 24px;
+}
+
+.doctor-container .doctor-card p{
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+
+@media (max-width: 992px) {
+  .doctor-container{
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .doctor-subcontent{
+
+  }
+}
+
+/* steps Section*/
+.steps-heading{
+  margin: 50px auto ;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+}
+.steps-text{
+  color: #000;
+}
+
+.steps-container{
+  align-items: center;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.steps-container h2{
+  position: relative;
+  width: 23rem;
+}
+
+.steps-container h2::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 12px;
+  width: 67px;
+  height: 2px;
+}
+
+.accordion{
+  width: 100%;
+  padding: 0 5px;
+  border: 2px solid #fc00ff;
+  cursor: pointer;
+  border-radius: 50px;
+  display: flex;
+  margin: 10px 0;
+  align-items: center;
+}
+
+.accordion .icon{
+  margin: 0 10px 0 0;
+  width: 20px;
+  height: 40px;
+  border-radius: 50%;
+  float: left;
+  transition: all 0.5s ease-in;
+}
+
+.accordion h5{
+  font-size: 22px;
+  margin: 0;
+  padding: 3px 0 0 0;
+  font-weight: normal;
+  color: #343a40;
+}
+
+.panel{
+  padding: 0 15px;
+  border-left: 1px solid #00dbde;
+  margin-left: 25px;
+  font-size: 14px;
+  text-align: justify;
+  overflow: hidden;
+  max-height: 0px;
+  transition: all 0.5s ease-in;
+}
+
+.active{
+  background-color:
+}
+
+.main-Container {
+  height: 550px;
+  width: 100%;
+  margin: 0px 0px;
+  background-image: url('/HOMEimages/front-mainImage.png');
+  background-image: linear-gradient(hsla(300, 100%, 50%, 0.22), 90%, hsla(184, 53%, 54%, 1)),url('/HOMEimages/front-mainImage.png');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.main-Content {
+  text-align: center;
+  color: white;
+}

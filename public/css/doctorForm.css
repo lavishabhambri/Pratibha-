@@ -1,0 +1,105 @@
+.doctor-dashboard-heading{
+  text-align: center;
+  margin: 40px auto;
+}
+.table-data{
+  padding-left:100px;
+  font-family: "Montserrate", sans-serif;
+  font-size: 20px;
+}
+
+.table-firstData{
+  font-family: "Montserrate", sans-serif;
+  font-size: 20px;
+}
+
+.submit-btn{
+  text-align: center;
+  margin: 20px auto;
+  color: #fff;
+}
+
+.doctor-input{
+  height: 0px;
+  border: 1px solid #000;
+}
+
+.table-doctor{
+  padding: 5%;
+}
+
+/* Bottom Section */
+.bottom-container{
+  padding: 5% 5%;
+  margin: 0px auto;
+  background-color: #F68283;
+}
+
+.div1{
+  background-color: #fff;
+  text-align: left;
+  height: 550px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+
+.div2{
+  background-color: #303036;
+  color: #fff;
+  text-align: left;
+  height: 550px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.patient-details{
+  color: #757575;
+  font-family: "Montserrate", sans-serif;
+}
+
+.patient-card{
+  width: 90%;
+  margin: 3% 3%;
+}
+
+.patient-details-button{
+  font-family: "Montserrate", sans-serif;
+}
+
+.bottom-subheading{
+  margin: 30px 25px;
+}
+
+.booking-card{
+  font-family: "Montserrate", sans-serif;
+  width: 85%;
+  height: 260px;
+  margin: 15px auto;
+}
+
+.patient-book-name{
+  color: #000;
+}
+
+
+.cancel-confirm-btns{
+  text-align: center;
+}
+
+.book-button{
+  margin:1%;
+}
+
+.book-button-profile{
+  margin-right: 105px;
+}
+
+.meeting-text{
+  color: #757575;
+  font-family: "Montserrate", sans-serif;
+}
+
+.card-inner-content{
+  margin: 2% 4%;
+}
