@@ -16,31 +16,25 @@ const { rest } = require('lodash');
 
 const app = express();
 
-//using session for creating session which helps in making cookies
-// app.use(session({
-//   secret:process.env.SECRET,
-//   resave:false,
-//   saveUninitialized:false
-// })) ;
 
 app.set('trust proxy', 1);
 
 app.use(session({
-// cookie:{
-//     secure: true,
-//     maxAge:60000
-//        },
+cookie:{
+    secure: true,
+    maxAge:60000
+       },
 secret: process.env.SECRET,
 saveUninitialized: true,
 resave: false
 }));
 
-// app.use(function(req,res,next){
-// if(!req.session){
-//     return next(new Error('Oh no')) //handle error
-// }
-// next() //otherwise continue
-// });
+app.use(function(req,res,next){
+if(!req.session){
+    return next(new Error('Oh no')) //handle error
+}
+next() //otherwise continue
+});
 
 
 //using and setting different packages
