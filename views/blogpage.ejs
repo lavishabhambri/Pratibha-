@@ -8,21 +8,21 @@
 <%blogList.forEach((item, i) => {%>
     <div class="col-md-4 col-sm-6 blog-box " style="padding:1% 1%;">
 
-    <h4 class="box-heading"><%= item.blogHeading.substring(0,20) + "  ..." %></h4>
+    <h5 class="box-heading"><%= item.blogHeading.substring(0,20) + "  ..." %></h5>
     <div class="community-blog-box">
-      <p style="color:#000; font-size:1rem;"><%= item.blogContent.substring(0,150) + "  ..."%></p>
+      <p style="color:#000; font-size:1rem;"><%= item.blogContent.substring(0,180) + "  ..."%></p>
     </div>
 
 
     <a  href="/home/blogpage/<%=item._id%>" type="button" name="button"><button class="btn-dark community-btn btn-sm">Read More</button></a>
-    <p class ="writtenby-heading"style="color:#fff; font-size:1rem; margin-top:20px;"> by <%= item.userName %></p>
+    <p class ="writtenby-heading"style="color:#000; font-size:1rem; margin-top:20px;"> by <%= item.userName %></p>
     </div>
 <%})%>
 </div>
 </div>
 
 
-<hr style="width:10%; border-top: 2px solid #757575; margin:10px auto; margin:bottom:0px;">
+<hr style="width:10%; border-top: 2px solid #757575; margin:20px auto; margin:bottom:0px;">
 
 <div class="container">
   <h1 class="Community-Sub-heading">Add a beautiful blog and help someone</h1>

@@ -35,17 +35,19 @@
 }
 
 .food .container .card:hover{
-  background-color: rgba(246, 130, 131, 1);
+  background-color: #FFCCCC;
 
 }
 
 .food .container .card p{
-  color: #757575;
+  color:  #E80B73;
+  font-weight: 20;
+  font-weight: bold;
   font-family: "Montserrat", sans-serif;
   margin-bottom: 20px;
   text-align: center;
 }
 
-.food .container .card p:hover{
+/* .food .container .card p:hover{
   color: #fff;
-}
+} */

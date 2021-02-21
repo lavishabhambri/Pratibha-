@@ -10,7 +10,6 @@ const passport = require("passport");
 const _ = require("lodash");
 const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-//const findOrCreate = require('mongoose-findorcreate');
 const OAuth2Client = require('google-auth-library');
 const { rest } = require('lodash');
 
@@ -54,7 +53,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //setting up mongodb
-mongoose.connect("mongodb://localhost:27017/pcosData",{useNewUrlParser: true, useUnifiedTopology: true,useFindAndModify:true});
+mongoose.connect("mongodb+srv://admin-vaibhavp:vaibhav123@cluster0.xp5ts.mongodb.net/pcosData",{useNewUrlParser: true, useUnifiedTopology: true,useFindAndModify:true});
 mongoose.set("useCreateIndex",true);
 
 
