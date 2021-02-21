@@ -12,7 +12,7 @@ const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const OAuth2Client = require('google-auth-library');
 const { rest } = require('lodash');
-
+const aws = require('aws-sdk');
 
 const app = express();
 
@@ -36,6 +36,11 @@ if(!req.session){
 next() //otherwise continue
 });
 
+// let s3 = new aws.S3({
+//   secret: process.env.SECRET,
+//   clientID: process.env.CLIENT_ID,
+//   clientSecret: process.env.CLIENT_SECRET
+// });
 
 //using and setting different packages
 app.use(bodyParser.urlencoded({extended:true}));
