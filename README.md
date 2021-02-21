@@ -38,7 +38,16 @@ Pratibha raises the concern for not just the women, but also for our sisters, wi
 # A sneek peek into what we have :
 - ### Login page:
 <p align="center"><img src="screenshots/Main Page.png" width = 80%></p>
-- 
+- ### About Section:
+<p align="center"><img src="screenshots/About Section.png" width = 80%></p>
+- ### Steps Section
+<p align="center"><img src="screenshots/Steps Section.png" width = 80%></p>
+- ### Predict Section
+<p align="center"><img src="screenshots/Predict Section.png" width = 80%></p>
+- ### ML Model
+<p align="center"><img src="screenshots/ML Model.png" width = 80%></p>
+
+
 # What's next for Pratibha Web Application 
 We want to grow our community of PCOS Women and make Pratibha Application available to every woman in the world. This platform will allow patients to consult doctors through Video Meetings and receive necessary medicines timely. This will also help them to reach the best doctors from any part of the world while just sitting at their homes. The platform also allows patients to pay fees to doctors directly online. We have planned to integrate Payment Gateway and promote this Web Application to a much larger extent. Every single Woman should know about PCOS , its effects, its symptoms, its cure through this Application. 
 
