@@ -45,88 +45,50 @@
   <div class="row">
     <div class="col col-lg-8 col-sm-12 div1 overflow-auto">
       <h2 class="bottom-subheading">Your Patients</h2>
-
-      <div class="card patient-card">
-        <div class="card-body">
-          <h5 class="card-header">Patient Name : </h5>
-          <p class="card-text patient-details">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-dark patient-details-button">Patient Details</a>
-        </div>
-
-      </div>
-
-      <div class="card patient-card">
-        <div class="card-body ">
-          <h5 class="card-header">Patient Name : </h5>
-          <p class="card-text patient-details">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-dark patient-details-button">Patient Details</a>
-        </div>
-      </div>
-
-
+<%doctorPatients.forEach((item, i) => {%>
+  <form  action="/doctor/patientDetails" method="POST">
+    <%if(item.isPatient === true){%>
     <div class="card patient-card">
-      <div class="card-body ">
-        <h5 class="card-header">Patient Name : </h5>
-        <p class="card-text patient-details">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-dark patient-details-button">Patient Details</a>
+      <div class="card-body">
+        <h5 class="card-header">Patient Name : <%=item.patientName%></h5>
+        <input type="hidden" name="patient_id" value="<%=item.patientID%>">
+        <p class="card-text patient-details">Check Patient detials</p>
+        <button type="submit" name="buttonProfile" class="btn btn-dark patient-details-button">Patient Details</button>
       </div>
     </div>
+  </form>
+<%}});%>
+
   </div>
 
     <div class="col col-lg-4 col-sm-12 div2 overflow-auto">
       <h2 class="bottom-subheading">Book Appointments</h2>
-      <div class="card booking-card">
-        <div class="card-body">
-          <h5 class="card-header patient-book-name">Patient Name : </h5>
-          <div class="card-inner-content">
-            <label class="meeting-text" for="meeting">Choose date:</label>
-            <input type="date" id="meeting" name="birthday">
-            <label  class="meeting-text" for="meeting">Select a time:</label>
-            <input type="time" id="meeting" name="appt">
-          </div>
-          <div class="cancel-confirm-btns">
-            <a href="#" class="btn btn-dark btn-sm book-button-profile">Profile</a>
-            <a href="#" class="btn btn-success btn-sm book-button"><i class="fas fa-check"></i></a>
-            <a href="#" class="btn btn-danger btn-sm book-button"><i class="fas fa-times"></i></a>
-          </div>
-        </div>
-      </div>
 
-      <div class="card booking-card">
-        <div class="card-body">
-          <h5 class="card-header patient-book-name">Patient Name : </h5>
-          <div class="card-inner-content">
-            <label class="meeting-text" for="meeting">Choose date:</label>
-            <input type="date" id="meeting" name="birthday">
-            <label  class="meeting-text" for="meeting">Select a time:</label>
-            <input type="time" id="meeting" name="appt">
-          </div>
-          <div class="cancel-confirm-btns">
-            <a href="#" class="btn btn-dark btn-sm book-button-profile">Profile</a>
-            <a href="#" class="btn btn-success btn-sm book-button"><i class="fas fa-check"></i></a>
-            <a href="#" class="btn btn-danger btn-sm book-button"><i class="fas fa-times"></i></a>
+      <%patientAppointments.forEach((item, i) => {%>
+        <%if(item.isPatient === false){%>
+      <form class="" action="/doctor/patientDetails" method="POST">
+        <div class="card booking-card">
+          <div class="card-body">
+            <h5 class="card-header patient-book-name">Patient Name :<%=item.patientName%></h5>
+            <div class="card-inner-content">
+              <label class="meeting-text" for="meeting">Choose date:</label>
+              <input type="date" id="meeting" name="meetingDate">
+              <label  class="meeting-text" for="meeting">Select a time:</label>
+              <input type="time" id="meeting" name="meetingTime">
+            </div>
+            <div class="cancel-confirm-btns">
+              <input type="hidden" name="patient_id" value="<%=item.patientID%>">
+              <button type="submit" class="btn btn-dark btn-sm book-button-profile" name="buttonProfile" value="buttonProfile">Profile</button>
+              <button type="submit" name="buttonConfirm" value="buttonConfirm" class="btn btn-success btn-sm book-button"><i class="fas fa-check"></i></button>
+              <button type="submit" name="buttonDelete" value="buttonDelete" class="btn btn-danger btn-sm book-button"><i class="fas fa-times"></i></button>
+            </div>
           </div>
         </div>
-      </div>
+      </form>
+    <%}});%>
 
-      <div class="card booking-card">
-        <div class="card-body">
-          <h5 class="card-header patient-book-name">Patient Name : </h5>
-          <div class="card-inner-content">
-            <label class="meeting-text" for="meeting">Choose date:</label>
-            <input type="date" id="meeting" name="birthday">
-            <label  class="meeting-text" for="meeting">Select a time:</label>
-            <input type="time" id="meeting" name="appt">
-          </div>
-          <div class="cancel-confirm-btns">
-            <a href="#" class="btn btn-dark btn-sm book-button-profile">Profile</a>
-            <a href="#" class="btn btn-success btn-sm book-button"><i class="fas fa-check"></i></a>
-            <a href="#" class="btn btn-danger btn-sm book-button"><i class="fas fa-times"></i></a>
-          </div>
-        </div>
-      </div>
+
     </div>
-
   </div>
 </div>
 

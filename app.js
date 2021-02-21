@@ -108,7 +108,7 @@ const patientSchema = new mongoose.Schema({
   blogs: [blogSchema],
   problemFaced:[{problemHeading:String,problem:String}],
   medicine:[{medName:{type:String,required:true},dateStart:Date,dateEnd:Date}],
-  appointment:[{patientName:String,patientID:String}]
+  appointment:[{patientName:String,patientID:String,isPatient:Boolean}],
 });
 
 
@@ -393,15 +393,31 @@ app.post("/patient/dashboard/patientMedicines",function(req,res){
 
 app.get("/patient/appointment",function(req,res) {
   User.find({},function(err,doc) {
-    console.log(doc);
     res.render("doctorsCommunity.ejs",{doctorsList:doc});
   });
 });
 
 /////////////////////////////****** Patient Report **END** Patient Problems ****** Patient Medicines ///////////////////////
 
+app.get("/patient/dashboard/selector",function (req,res) {
+  if(req.user)
+  {
+    console.log("i am inside dashboard selector");
+    var name = req.user.username;
+    const userID = req.user.user_id;
 
-
+    if(req.user.isDoctor === true)
+    {
+      res.redirect("/doctor/dashboard");
+    }
+    else {
+      res.redirect("/patient/dashboard")
+    }
+  }
+  else {
+    res.redirect("/home");
+  }
+})
 
 /////////////////////////////****** Patient Report **** Patient Problems ****** Patient Medicines ///////////////////////
 
@@ -415,7 +431,8 @@ app.get("/doctor/dashboard",function(req,res){
     User.findOne({user_id:userID},function(err,user){
     res.render("doctor.ejs",{userName:name,doctorID:user.doctorID,gender:user.gender,
       qualification:user.qualification,age:user.age,address:user.address,email:user.email,
-      hospitalName:user.hospitalName,contactNo:user.contactNo});
+      hospitalName:user.hospitalName,contactNo:user.contactNo,
+    patientAppointments:user.appointment,doctorPatients:user.appointment});
   });
   }
   else {
@@ -454,7 +471,6 @@ app.get("/blogpage",function(req,res){
 /////////////////////////////******Appointment Section ********//////////////////////////////////////////
 
 app.post("/patient/askAppointment",function(req,res) {
-  console.log("We reached here");
   var doctorID =  req.body.doctorId;
   if(req.user)
   {
@@ -462,12 +478,77 @@ app.post("/patient/askAppointment",function(req,res) {
     const userID = req.user.user_id;
 
     User.updateOne({user_id: doctorID},
-      {$push:{appointment:{patientName:name,patientID:userID}}},function(err) {
-          console.log(err);
-        });
-    alert("Appointment is sent to doctor!");
-    res.redirect("/patient/appointment")
+      {$push:{appointment:{patientName:name,patientID:userID,isPatient:false}}},function(err) {
+        console.log(err);
+      });
+    res.redirect("/patient/appointment");
   }
+});
+
+app.post("/doctor/patientDetails",function(req,res) {
+  var patientID = req.body.patient_id;
+  if(req.body.buttonProfile)
+  {
+    User.findOne({user_id:patientID},function(err,patient) {
+      if(!err){
+        res.render("docPatient.ejs",{userName:patient.username,age:patient.age,contactNo:patient.contactNo,gender:patient.gender,email:patient.email,
+        problemList:patient.problemFaced,medicineList:patient.medicine});
+      }
+      else {
+        console.log(err);
+      }
+    });
+  }
+  else if (req.body.buttonConfirm) {
+    var patientIdentity = req.body.patient_id;
+    var name = req.user.username;
+    const userID = req.user.user_id;
+    User.findOne({user_id:userID},function(err,doctor) {
+      if(!err){
+         var index = 0;
+          doctor.appointment.forEach((item, i) => {
+            if(item.patientID==patientIdentity)
+            {
+              index = i;
+              item.isPatient=true;
+            }
+            var ID = doctor.appointment[index]._id;
+            doctor.appointment[index].isPatient = true;
+            User.updateOne({user_id:userID,
+              appointment:{$elemMatch:{patientID:patientIdentity}}},{$set:{"appointment.$.isPatient":true}},function(err) {
+                if(err)console.log(err);
+              });
+          });
+          res.redirect("/doctor/dashboard");
+      }
+      else {
+        console.log(err);
+        res.redirect("/doctor/dashboard");
+      }
+    });
+  }
+  else if (req.body.buttonDelete) {
+    var patientIdentity = req.body.patient_id;
+    var name = req.user.username;
+    const userID = req.user.user_id;
+      User.findOne({user_id:userID},function(err,doctor) {
+        if(err){console.log(err)}
+        else
+          { var index = 0;
+            doctor.appointment.forEach((item, i) => {
+              if(item.patientID==patientIdentity)
+              {
+                index = i;
+              }
+              var ID = doctor.appointment[index]._id;
+              User.updateOne({user_id:userID},{$pull:{appointment:{_id:ID}}},function(err) {
+                if(err){console.log(err);}
+              });
+              res.redirect("/doctor/dashboard");
+            });
+          }
+      });
+    }
 });
 
 /////////////////////////////****** Blogs and Blog Page ********//////////////////////////////////////////////////////////
@@ -480,6 +561,8 @@ app.get("/home/blogpage",function(req,res){
       res.render("blogpage.ejs",{blogList:blogs});
     }
   });
+
+
 });
 
 app.post("/home/blogpage",function(req,res) {
@@ -528,7 +611,7 @@ app.get("/home/blogpage/:whatever", function(req, res) {
             postUniqueId: postId,
             postHeading: document.blogHeading,
             postContent: document.blogContent,
-            postWriter: document.userName });
+            postWriter: document.userName});
          }
       });
   });
@@ -572,10 +655,6 @@ app.post("/home/blogpage/message",function(req,res) {
 
 app.get("/HOMEindex" , function(req,res){
   res.render("HOMEindex.ejs");
-});
-
-app.get("/docPatient", function(req,res){
-  res.render("docPatient.ejs");
 });
 
 /////////////////////////////****** Blogs and Blog Page **END**//////////////////////////////////////////////////////////

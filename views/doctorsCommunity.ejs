@@ -57,7 +57,7 @@
       <a class="p-2 text-dark" href="/home/blogpage"><span class="navbar-text">Community</span></a>
       <a class="p-2 text-dark" href="/yogadiet"><span class="navbar-text">Yoga</span></a>
       <a class="p-2 text-dark" href="https://pcosmlmodel-api.herokuapp.com/"><span class="navbar-text">Self Test</span></a>
-      <a class="p-2 text-dark" href="/patient/dashboard"><span class="navbar-text">Dashboard</span></a>
+      <a class="p-2 text-dark" href="/patient/dashboard/selector"><span class="navbar-text">Dashboard</span></a>
     </nav>
 
 
@@ -69,7 +69,7 @@
   <div class="container" style="overflow:scroll; padding:5%;">
         <%doctorsList.forEach((item, i)=> {%>
           <%if(item.isDoctor===true){%>
-        <form action="/patient/askAppointment" method="post">
+        <form action="/patient/askAppointment" method="POST">
             <div class="card" style="width: 18rem; display:inline; margin:2% 3% ">
               <img class="card-img-top" style="height:100px;width:100px; margin-left:0px;" src="<%=item.pictureURL%>" alt="Doc image">
               <%if(item.certified===true){%><img src="/HOMEimages/certified.png" style="height:60px;width:60px; position:relative; right:60px; top:22px;" alt=""><%}%>
@@ -80,7 +80,8 @@
                 <p class="card-text" style="color:#000;">Hospital: <%= item.hospitalName %></p>
                 <p class="card-text" style="color:#000;">Location: <%= item.address %></p>
                 <input type="hidden" name="doctorId" value="<%= item.user_id %>">
-                <a href="" type="submit" class="btn btn-success">Ask Appointment</a>
+                <!-- <a href="" type="" class="btn btn-success">Appointment Sent</a> -->
+                <button type="submit" class="btn btn-primary" name="button">Ask Appointment</button>
               </div>
             </div>
         </form>
