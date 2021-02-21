@@ -162,7 +162,7 @@ passport.deserializeUser(function(id, done) {
 passport.use('google',new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/google/patient"
+    callbackURL: "http://warm-cliffs-53731.herokuapp.com/auth/google/patient"
   },
   function(accessToken, refreshToken, profile, done) {
     // pictureURL = profile._json.picture;
@@ -209,7 +209,7 @@ app.get('/auth/google/patient',
   passport.use('google-doctor',new GoogleStrategy({
       clientID: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
-      callbackURL: "http://localhost:3000/auth/google/doctor"
+      callbackURL: "http://warm-cliffs-53731.herokuapp.com//auth/google/doctor"
     },
     function(accessToken, refreshToken, profile, done) {
 
