@@ -38,12 +38,16 @@ Pratibha raises the concern for not just the women, but also for our sisters, wi
 # A sneek peek into what we have :
 - ### Login page:
 <p align="center"><img src="screenshots/Main Page.png" width = 80%></p>
+
 - ### About Section:
 <p align="center"><img src="screenshots/About Section.png" width = 80%></p>
+
 - ### Steps Section
 <p align="center"><img src="screenshots/Steps Section.png" width = 80%></p>
+
 - ### Predict Section
 <p align="center"><img src="screenshots/Predict Section.png" width = 80%></p>
+
 - ### ML Model
 <p align="center"><img src="screenshots/ML Model.png" width = 80%></p>
 
