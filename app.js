@@ -52,7 +52,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //setting up mongodb
-mongoose.connect("mongodb+srv://admin-vaibhavp:vaibhav123@cluster0.xp5ts.mongodb.net/pcosData",{useNewUrlParser: true, useUnifiedTopology: true,useFindAndModify:true});
+mongoose.connect("",{useNewUrlParser: true, useUnifiedTopology: true,useFindAndModify:true});
 mongoose.set("useCreateIndex",true);
 
 
