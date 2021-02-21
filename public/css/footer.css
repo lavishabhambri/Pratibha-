@@ -40,11 +40,17 @@ p{
 }
 
 .footer-about-text , .contact{
+	padding-top: 0px;
 	text-align: center;
 	line-height: 1.5;
 }
 
+.sublink-1:hover{
+	color: #E80B73;
+}
+
 .sub-links{
+	font-family: "Montserrat", sans-serif;
 	color: #fff;
 }
 
@@ -58,8 +64,8 @@ p{
 }
 
 .footer-button1{
-	border-color: #F68283;
-	background-color: #F68283;
+	border-color: #E80B73;
+	background-color: #E80B73;
 	color: #fff;
 }
 
@@ -68,17 +74,15 @@ p{
 }
 
 .contact-input-email{
+	border:1px solid #E80B73;
 	background-color: #fff;
 	margin-bottom: 1%;
 	border-radius: 1%;
 }
 
-.contact-input-email:focus{
-	border:1px solid #F68283;
-	outline: none;
-}
+
 .contact-input{
-	border:1px solid #F68283;
+	border:1px solid #E80B73;
 	outline: none;
 }
 

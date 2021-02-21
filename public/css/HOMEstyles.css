@@ -73,7 +73,6 @@ header {
 
 button{
     padding: 9px 25px;
-    /* background-color: rgba(246, 130, 131, 1); */
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -101,12 +100,12 @@ button{
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   color: #000;
+  font-size: 50px;
   margin: 100px auto 50px;
 }
 
 .mainImage2 {
     max-width: 30%;
-    /* height: auto; */
     position: relative;
     margin-top: 100px;
     justify-content: center;
@@ -152,12 +151,6 @@ button{
   margin-top: 60px;
   text-align:left;
 }
-.checkoutButton {
-    padding: 40px 0;
-    text-align: center;
-    z-index:1;
-}
-
 
 .loginButton {
     margin-left: 20px;
@@ -170,6 +163,7 @@ button{
     flex-direction: column;
     padding: 0 20% 30px 20%;
 }
+
 .aboutContainer {
     font-family: "Montserrat", sans-serif;
     display: flex;
@@ -179,8 +173,8 @@ button{
 }
 .aboutText1 {
     font-family: "Montserrat", sans-serif;
-    padding: 20px 0;
-    color: #000;
+    padding: 25px 0;
+    color: #757575;
     line-height: 1.5;
 }
 .aboutText {
@@ -218,7 +212,7 @@ button{
 .features{
   margin: -0.5px
    auto 50px auto;
-  background-color: hsla(300, 100%, 50%, 0.22);
+  background-color: #FFCCCC;
 }
 
 .single_project{
@@ -241,14 +235,10 @@ button{
     text-align: center;
 }
 
-.features-icon{
-  padding-top: 20px;
-  margin-bottom: 30px;
-}
 
-.features-icon:hover{
-  color: #F68283;
-}
+/* .features-icon:hover{
+
+} */
 
 .features-subheading{
   text-align: center;
@@ -288,6 +278,8 @@ button{
 
 /* Doctor section */
 .doctors-heading{
+  font-size: 50px;
+  font-family:"Montserrat", sans-serif;
   font-weight: bold;
   margin: auto;
   text-align: center;
@@ -295,7 +287,7 @@ button{
 
 .doctor-container{
   position: relative;
-  width: 1000px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -303,11 +295,12 @@ button{
 }
 
 .doctor-card{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   position: relative;
   height: 250px;
   background: #fff;
   display: flex;
-  width: 45%;
+  width: 40%;
   margin: 30px 0;
 }
 
@@ -428,7 +421,7 @@ button{
 .accordion{
   width: 100%;
   padding: 0 5px;
-  border: 2px solid #fc00ff;
+  border: 2px solid #E80B73;
   cursor: pointer;
   border-radius: 50px;
   display: flex;
@@ -455,31 +448,12 @@ button{
 
 .panel{
   padding: 0 15px;
-  border-left: 1px solid #00dbde;
+  border-left: 1px solid #343a40;
   margin-left: 25px;
   font-size: 14px;
+  font-family: "Montserrat", sans-serif;
   text-align: justify;
   overflow: hidden;
   max-height: 0px;
   transition: all 0.5s ease-in;
-}
-
-.active{
-  background-color:
-}
-
-.main-Container {
-  height: 550px;
-  width: 100%;
-  margin: 0px 0px;
-  background-image: url('/HOMEimages/front-mainImage.png');
-  background-image: linear-gradient(hsla(300, 100%, 50%, 0.22), 90%, hsla(184, 53%, 54%, 1)),url('/HOMEimages/front-mainImage.png');
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.main-Content {
-  text-align: center;
-  color: white;
 }
