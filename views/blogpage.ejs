@@ -5,6 +5,7 @@
 <div class="container blog-cont">
 
   <div class="row" style="margin:0px 100px;">
+<%if(blogList){%>
 <%blogList.forEach((item, i) => {%>
     <div class="col-md-4 col-sm-6 blog-box " style="padding:1% 1%;">
 
@@ -14,10 +15,10 @@
     </div>
 
 
-    <a  href="/home/blogpage/<%=item._id%>" type="button" name="button"><button class="btn-dark community-btn btn-sm">Read More</button></a>
+    <a  href="/blogpage/<%=item._id%>" type="button" name="button"><button class="btn-dark community-btn btn-sm">Read More</button></a>
     <p class ="writtenby-heading"style="color:#000; font-size:1rem; margin-top:20px;"> by <%= item.userName %></p>
     </div>
-<%})%>
+<%})};%>
 </div>
 </div>
 
@@ -27,7 +28,7 @@
 <div class="container">
   <h1 class="Community-Sub-heading">Add a beautiful blog and help someone</h1>
 
-  <form class="form-community" action="/home/blogpage" method="post">
+  <form class="form-community" action="/blogpage" method="post">
     <textarea class="community-textarea" style="padding:3%;" name="blogHeading" placeholder="Heading for blog" rows="1" cols="86" ></textarea>
     <textarea class="community-textarea" style="padding:5%;" name="blogContent" placeholder="Content" rows="8" cols="80"></textarea>
     <br>

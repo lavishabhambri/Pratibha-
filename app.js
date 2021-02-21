@@ -187,7 +187,7 @@ passport.use('google',new GoogleStrategy({
 
 
 app.get('/auth/google/patient',
-  passport.authenticate('google', { failureRedirect: '/home' }),
+  passport.authenticate('google', { failureRedirect: '/' }),
   function(req, res) {
       User.findOne({user_id:req.user.user_id},function (err,document) {
         if(document)
@@ -234,7 +234,7 @@ app.get('/auth/google/patient',
     }));
 
   app.get('/auth/google/doctor',
-    passport.authenticate('google-doctor', { failureRedirect: '/home' }),
+    passport.authenticate('google-doctor', { failureRedirect: '/' }),
     function(req, res) {
       User.findOne({user_id:req.user.user_id},function (err,document) {
         if(document)
@@ -255,7 +255,7 @@ app.get('/auth/google/patient',
 
 
 //code for getting and posting on routes
-app.get("/home",function(req,res){
+app.get("/",function(req,res){
   res.render("HOMEindex.ejs");
 });
 
@@ -299,7 +299,7 @@ app.get("/patient/dashboard",function(req,res){
   });
   }
   else {
-    res.redirect("/home");
+    res.redirect("/");
   }
 
 });
@@ -414,7 +414,7 @@ app.get("/patient/dashboard/selector",function (req,res) {
     }
   }
   else {
-    res.redirect("/home");
+    res.redirect("/");
   }
 })
 
@@ -435,7 +435,7 @@ app.get("/doctor/dashboard",function(req,res){
   });
   }
   else {
-    res.redirect("/home");
+    res.redirect("/");
   }
 });
 
@@ -463,9 +463,7 @@ app.post("/doctor/dashboard/one-time-inputs",function(req,res){
 });
 
 
-app.get("/blogpage",function(req,res){
-  res.render("blogpage.ejs");
-})
+
 
 /////////////////////////////******Appointment Section ********//////////////////////////////////////////
 
@@ -553,7 +551,7 @@ app.post("/doctor/patientDetails",function(req,res) {
 /////////////////////////////****** Blogs and Blog Page ********//////////////////////////////////////////////////////////
 
 
-app.get("/home/blogpage",function(req,res){
+app.get("/blogpage",function(req,res){
   PCOSBlog.find({},function(err,blogs) {
     if(err){console.log(err);}
     else {
@@ -564,7 +562,7 @@ app.get("/home/blogpage",function(req,res){
 
 });
 
-app.post("/home/blogpage",function(req,res) {
+app.post("/blogpage",function(req,res) {
   const blogHeading = req.body.blogHeading;
   const blogContent = req.body.blogContent;
 
@@ -581,7 +579,7 @@ app.post("/home/blogpage",function(req,res) {
         else {
           if(doc)
           {
-              res.redirect("/home/blogpage");
+              res.redirect("/blogpage");
           }
           else {
               const newBlog = new PCOSBlog({userId:userID,userName:userName,blogHeading:blogHeading,blogContent:blogContent});
@@ -590,18 +588,18 @@ app.post("/home/blogpage",function(req,res) {
                  { $push: { blogs: newBlog}},{upsert:true}, function(err) {
                   if(err){console.log(err);}
                 });
-              res.redirect("/home/blogpage");
+              res.redirect("/blogpage");
           }
         }
       });
   }
   else {
-    res.redirect("/home/blogpage");
+    res.redirect("/blogpage");
   }
 
 });
 
-app.get("/home/blogpage/:whatever", function(req, res) {
+app.get("/blogpage/:whatever", function(req, res) {
       var postId = req.params.whatever;
       PCOSBlog.findOne({_id:postId},function(err,document) {
         if(err){console.log(err);}
@@ -616,7 +614,7 @@ app.get("/home/blogpage/:whatever", function(req, res) {
   });
 
 //post request for sending message to writer of the post
-app.post("/home/blogpage/message",function(req,res) {
+app.post("/blogpage/message",function(req,res) {
   var postId = req.body.postUniqueId;
   var messageTitle = req.body.messageTitle;
   var messageContent = req.body.messageContent;
@@ -633,26 +631,26 @@ app.post("/home/blogpage/message",function(req,res) {
         User.updateOne({user_id:blogWriterID},
            { $push: { message: {senderId:userID,senderName:userName,messageHeading:messageTitle,messageContent:messageContent}}},
            {upsert:true}, function(err) {
-            if(err){res.redirect("/home/blogpage/"+postId);}
+            if(err){res.redirect("//blogpage/"+postId);}
             else {
               console.log("Message cahal gya arram se");
             }
           });
         // Doctor.updateOne({user_id:blogWriterID},
         //    { $push: { message: {senderName:userName,messageHeading:messageTitle,messageContent:messageContent}}},{upsert:true}, function(err) {
-        //     if(err){res.redirect("/home/blogpage/:whatever");}
+        //     if(err){res.redirect("//blogpage/:whatever");}
         //   });
-          res.redirect("/home/blogpage/"+postId);
+          res.redirect("//blogpage/"+postId);
         }
         else {
           console.log("Inhai document nahi mila postId se dhoodne par");
-          res.redirect("/home/blogpage/"+postId);
+          res.redirect("//blogpage/"+postId);
         }
       }
     });
 });
 
-app.get("/HOMEindex" , function(req,res){
+app.get("/index" , function(req,res){
   res.render("HOMEindex.ejs");
 });
 

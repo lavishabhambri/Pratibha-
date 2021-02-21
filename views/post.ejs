@@ -49,18 +49,15 @@
   <body>
 
 <header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm">
-  <p class="h5 my-0 me-md-auto fw-normal"><span style=" font-size:30px; font-weight:bold;"><span style="color:#F68283;">PCOS</span>isters</span></p>
+  <a href="/"><img style="height:90px; width:90px;" src="/HOMEimages/PratibhaLogo.svg" class="image-responsive"></a>
   <nav class="my-2 my-md-0 me-md-3">
-    <a class="p-2 text-dark" href="/home"><span class="navbar-text">Home</span></a>
-    <a class="p-2 text-dark" href="/home/blogpage"><span class="navbar-text">Community</span></a>
+    <a class="p-2 text-dark" href="/"><span class="navbar-text">Home</span></a>
+    <a class="p-2 text-dark" href="/blogpage"><span class="navbar-text">Community</span></a>
     <a class="p-2 text-dark" href="/yogadiet"><span class="navbar-text">Yoga</span></a>
     <a class="p-2 text-dark" href="https://pcosmlmodel-api.herokuapp.com/"><span class="navbar-text">Self Test</span></a>
     <a class="p-2 text-dark" href="/patient/dashboard/selector"><span class="navbar-text">Dashboard</span></a>
   </nav>
 
-
-  <button class="nav_button" style="color: #000;" type="button" name="button"><i class="fab fa-google"></i><a href="/auth/google" style="color:#fff;"> Sign Up as Sister</a></button>
-  <button class="nav_button" style="color: #000;" type="button" name="button"><i class="fab fa-google"></i><a href="/auth/googledoc" style="color:#fff;"> Sign Up as Doctor</a></button>
 </header>
 
 
@@ -76,7 +73,7 @@
 <hr style="width:10%; border-top: 2px solid #757575; margin:10px auto 40px;">
 
 <div class="container">
-  <form action="/home/blogpage/message" method="post">
+  <form action="/blogpage/message" method="post">
     <input type="hidden" name="postUniqueId" value="<%=postUniqueId%>">
     <div class="message-writer">
       <h3>Message for the writer</h3>
