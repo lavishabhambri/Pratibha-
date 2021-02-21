@@ -1,7 +1,7 @@
 # Pratibha 💁‍♀️
 Pratibha is a solution concept revolving around the women who fight one on one with various problems, one of these is Polycystic ovary syndrome (PCOS), that needs our utmost attention to raise voices.
 
-# What is PCOS?
+# What is PCOS? 👩‍⚕️
 **Polycystic ovary syndrome (PCOS)** is a condition that affects a woman's hormone levels. where they produce higher-than-normal amounts of male hormones. This hormone imbalance causes them to skip menstrual periods and makes it harder for them to get pregnant, higher chances to Breast Cancer, Depression, anxiety attacks and other health problems. In India nearly 20% women face PCOS, out of which nearly 1% know about PCOS. This is quite saddening and shameful to us, who have blindly folded our eyes.
 
 # What it does 🎯
