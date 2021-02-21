@@ -12,7 +12,7 @@ const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const OAuth2Client = require('google-auth-library');
 const { rest } = require('lodash');
-
+socket = io.listen(process.env.PORT);
 
 const app = express();
 
