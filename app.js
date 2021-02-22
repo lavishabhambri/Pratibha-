@@ -51,8 +51,10 @@ app.use(express.static(__dirname + '/public'));
 app.use(passport.initialize());
 app.use(passport.session());
 
+var database = process.env.DATABASE;
+
 //setting up mongodb
-mongoose.connect("mongodb+srv://admin-vaibhavp:vaibhav123@cluster0.xp5ts.mongodb.net/pcosData",{useNewUrlParser: true, useUnifiedTopology: true,useFindAndModify:true});
+mongoose.connect(database,{useNewUrlParser: true, useUnifiedTopology: true,useFindAndModify:true});
 mongoose.set("useCreateIndex",true);
 
 
