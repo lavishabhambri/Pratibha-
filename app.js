@@ -670,5 +670,5 @@ else {
 
 
 app.get("/googlebbea47e899b3dcff.html",function(req,res) {
-  res.render("googlebbea47e899b3dcff.html")
+  res.render("googlebbea47e899b3dcff")
 });
