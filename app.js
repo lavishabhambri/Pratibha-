@@ -632,7 +632,7 @@ app.post("/blogpage/message",function(req,res) {
         User.updateOne({user_id:blogWriterID},
            { $push: { message: {senderId:userID,senderName:userName,messageHeading:messageTitle,messageContent:messageContent}}},
            {upsert:true}, function(err) {
-            if(err){res.redirect("//blogpage/"+postId);}
+            if(err){res.redirect("/blogpage/"+postId);}
             else {
               console.log("Message cahal gya arram se");
             }
@@ -641,11 +641,11 @@ app.post("/blogpage/message",function(req,res) {
         //    { $push: { message: {senderName:userName,messageHeading:messageTitle,messageContent:messageContent}}},{upsert:true}, function(err) {
         //     if(err){res.redirect("//blogpage/:whatever");}
         //   });
-          res.redirect("//blogpage/"+postId);
+          res.redirect("/blogpage/"+postId);
         }
         else {
           console.log("Inhai document nahi mila postId se dhoodne par");
-          res.redirect("//blogpage/"+postId);
+          res.redirect("/blogpage/"+postId);
         }
       }
     });
@@ -667,4 +667,8 @@ else {
   app.listen(port, function(req, res) {
     console.log("The server is running on port 3000.");
   });
-}
+
+
+app.get("/googlebbea47e899b3dcff.html",function(req,res) {
+  res.render("googlebbea47e899b3dcff.html")
+});
