@@ -667,8 +667,4 @@ else {
   app.listen(port, function(req, res) {
     console.log("The server is running on port 3000.");
   });
-
-
-app.get("/googlebbea47e899b3dcff.html",function(req,res) {
-  res.render("googlebbea47e899b3dcff")
-});
+}
