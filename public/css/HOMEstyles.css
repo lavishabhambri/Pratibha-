@@ -6,6 +6,11 @@
     padding: 0;
 }
 
+.chatbot
+{
+  position: fixed;
+    display: inline;
+}
 
 li, a{
     font-family: "Montserrate", sans-serif;
