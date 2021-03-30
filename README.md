@@ -20,9 +20,15 @@ So the question comes: How will women check the doctor's qualification? We will 
 So the app spreads awareness, improves health standards, promotes diversity & increases the self-esteem of the women who can feel much happier and independent with such an interactive portal. 
 Pratibha raises the concern for not just the women, but also for our sisters, wives, mothers, and every girl who is unaware of PCOS and suffers the pain all alone devastating their personal life. It encourages women to hold their thoughts and live a life free of pain.
 
+# Google Developer Student Clubs Solution Challenge 2021
+The Solutions Challenge 2021 provides the perfect platform for our web app to aware the masses about the PCOS and how to respond to this syndrome. Through our solution, we are focussing on the “Good health and Well-Being” and "Gender Equality & Women Empowerment" Goals under the United Nations’ Sustainable Development. Google provides a multitude of APIs and SDKs which makes the development of our web app smooth, robust and scalable. We aim to use many new features available in the Google Cloud Platform for our Pratibha web app and this can only be accomplished through the Google Developer Student Clubs Solution Challenge 2021
+
+
 ## Built with :
 - HTML
 - CSS
+- Google DialogFlow (for chatbot)
+- Google Auth 2.0
 - Bootstrap
 - Javascript
 - JQuery
@@ -42,8 +48,8 @@ Pratibha raises the concern for not just the women, but also for our sisters, wi
 - ### About Section:
 <p align="center"><img src="screenshots/About Section.png" width = 80%></p><br>
 
-- ### Steps Section:
-<p align="center"><img src="screenshots/Steps Section.png" width = 80%></p><br>
+- ### Chatbot:
+<p align="center"><img src="screenshots/Chatbot.png" width = 80%></p><br>
 
 - ### Predict Section:
 <p align="center"><img src="screenshots/Predict section.png" width = 80%></p><br>
