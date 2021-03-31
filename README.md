@@ -35,9 +35,10 @@ The Solutions Challenge 2021 provides the perfect platform for our web app to aw
 - Node.js
 - Express.js
 - MongoDB
-- Python
+- Mongoose
 - MongoDB Atlas
 - Machine Learning
+- Python
 - Flask
 - Heroku
 
