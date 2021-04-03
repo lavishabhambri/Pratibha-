@@ -23,10 +23,6 @@ So the question comes: How will women check the doctor's qualification? We will 
 So the app spreads awareness, improves health standards, promotes diversity & increases the self-esteem of the women who can feel much happier and independent with such an interactive portal. 
 Pratibha raises the concern for not just the women, but also for our sisters, wives, mothers, and every girl who is unaware of PCOS and suffers the pain all alone devastating their personal life. It encourages women to hold their thoughts and live a life free of pain. Every woman can access the simple, user-friendly Application remotely. 
 
-# Google Developer Student Clubs Solution Challenge 2021
-The Solutions Challenge 2021 provides the perfect platform for **Pratibha** web app to aware the masses of women about PCOS and how to respond to this syndrome. Through our solution, we are focussing on the **Good health and Well-Being** and **Gender Equality & Women Empowerment** Goals under the **United Nations’ Sustainable Development**. Google provides a multitude of APIs and SDKs which makes the development of our web app smooth, robust and scalable. We aim to use many new features available in the Google Cloud Platform for our Pratibha web app and the global success can only be accomplished through the **Google Developer Student Clubs Solution Challenge 2021**. 
-
-
 # Technologies, Tools & Platforms used :
 - HTML
 - CSS
@@ -83,13 +79,12 @@ The Solutions Challenge 2021 provides the perfect platform for **Pratibha** web 
 <p align="center"><img src="screenshots/Community Blogs.jpeg" width = 80%></p><br>
 
 # What's next for Pratibha Web Application ?✨
-1. We want to grow our community of PCOS Women and make Pratibha Application available to every woman in the world. To enhance accessibility of Pratibha to rural women, we have planned to make the WebApp, Chatbot and Call Agent available in native languages. 
-2. For simple PCOS Testing using the ML model, we will also integrate the model for self-test with our virtual call agent. This will allow women all around the world to just dial a phone call & take the test in their native language.
-3. In order to book online Patient’s meetings with the doctors, we will be using the platform to integrate a group Video calling feature using WebRTC. This will be so quick & easy.
-4. We have also decided to integrate the Payment Gateway feature to allow the patients to pay the doctors’ consultation fee online.
-5. Our application will have an optimized Yoga & Exercise corner where patients can assign themselves daily Yoga tasks and various exercises. This will motivate users to build a daily streak for a healthy and positive life.
-6. We will also improve the Machine Learning model to let the patients view their personalized weekly health Analysis reports (via graphs or bar charts) for better health improvement.
-7. We have also planned to integrate Push Notifications to patients which allows them to check all the necessary updates regarding PCOS and their health. This can be implemented using Google APIs for Push Technology.
-8. We want to promote Pratibha to a much larger extent. Every single girl & woman should know about PCOS , its effects, its symptoms, its cure through this Application. 
+1. MultiLingual platform & calling feature for native women.
+2. Self Test integrated Call Agent using ML model.
+3. Daily streak for yoga & exercises.
+4. Weekly Health Analysis of Patients.
+5. Payment Integration.
+6. Online Video meetings.
+7. Push notification for daily updates.
 
 ### <i>Hope you like it ❤️.
